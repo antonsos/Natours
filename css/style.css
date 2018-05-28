@@ -33,8 +33,7 @@
 *::after {
   padding: 0;
   margin: 0;
-  box-sizing: inherit;
-  backface-visibility: hidden; }
+  box-sizing: inherit; }
 
 html {
   font-size: 62.5%; }
@@ -59,7 +58,8 @@ body {
 .heading-primary {
   margin-bottom: 6rem;
   color: #fff;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  backface-visibility: hidden; }
   .heading-primary--main {
     display: inline-block;
     padding-left: 2rem;
@@ -116,49 +116,50 @@ body {
 .u-margin-bottom-small {
   margin-bottom: 1.5rem; }
 
-.btn:link, .btn:visited {
-  position: relative;
-  display: inline-block;
-  padding: 1.5rem 4rem;
-  border-radius: 10rem;
-  font-size: 1.6rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: .3s;
-  backface-visibility: hidden; }
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-  .btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0; }
-
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
-
-.btn--white {
-  background-color: #fff;
-  color: #777;
-  font-weight: 700; }
-  .btn--white::after {
-    background-color: #fff; }
-
-.btn::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  content: "";
-  border-radius: 10rem;
-  z-index: -1;
-  transition: .4s; }
-
-.btn--animate {
-  animation: moveInUp;
-  animation-duration: 1s; }
+.btn {
+  position: relative; }
+  .btn:link, .btn:visited {
+    display: inline-block;
+    padding: 1.5rem 4rem;
+    border-radius: 10rem;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: .3s; }
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+    .btn:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0; }
+  .btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  .btn--white {
+    background-color: #fff;
+    color: #777;
+    font-weight: 700; }
+    .btn--white::after {
+      background-color: #fff; }
+  .btn--green {
+    background-color: #55c57a;
+    color: #fff;
+    font-weight: 700; }
+    .btn--green::after {
+      background-color: #55c57a; }
+  .btn::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    border-radius: 10rem;
+    z-index: -1;
+    transition: .4s; }
+  .btn--animate {
+    animation: moveInUp;
+    animation-duration: 1s; }
 
 .btn-text {
   transition: .3s; }
@@ -179,6 +180,107 @@ body {
   .btn-text:active {
     transform: translateY(-1px);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.tours__btn {
+  display: inline-block;
+  padding: .5rem;
+  border-bottom: 1px solid #55c57a;
+  color: #55c57a;
+  font-size: 1.6rem;
+  text-decoration: none; }
+
+.card {
+  position: relative;
+  height: 50rem; }
+  .card__side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50rem;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 3.5rem rgba(0, 0, 0, 0.3);
+    backface-visibility: hidden;
+    overflow: hidden;
+    transition: .6s ease; }
+    .card__side--front {
+      background-color: #fff; }
+    .card__side--back {
+      transform: rotateY(-180deg); }
+      .card__side--back-2 {
+        background-image: linear-gradient(to right bottom, #7ed56f, #28d485); }
+      .card__side--back-1 {
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+      .card__side--back-3 {
+        background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
+  .card:hover .card__side--front {
+    transform: rotateY(180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0); }
+  .card__picture {
+    height: 23rem;
+    background-color: #fff;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%); }
+    .card__picture--1 {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.5), rgba(255, 119, 48, 0.5)), url(../img/nat-5.jpg);
+      background-size: cover;
+      background-position: center; }
+    .card__picture--2 {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.5), rgba(40, 212, 133, 0.5)), url(../img/nat-5.jpg);
+      background-size: cover;
+      background-position: center; }
+    .card__picture--3 {
+      background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.5), rgba(86, 67, 250, 0.5)), url(../img/nat-5.jpg);
+      background-size: cover;
+      background-position: center; }
+  .card__heading {
+    position: absolute;
+    top: 11.5rem;
+    right: 1.5rem;
+    color: #fff;
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase; }
+    .card__heading--main {
+      display: block;
+      padding: 0 1rem; }
+    .card__heading--sub {
+      display: block;
+      padding: 0 1rem; }
+    .card__heading--1 {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.9), rgba(255, 119, 48, 0.9)); }
+    .card__heading--2 {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.9), rgba(40, 212, 133, 0.9)); }
+    .card__heading--3 {
+      background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.9), rgba(86, 67, 250, 0.9)); }
+  .card__list {
+    width: 80%;
+    margin: 0 auto;
+    list-style: none;
+    color: #777; }
+  .card__item {
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: center; }
+    .card__item:not(:last-child) {
+      border-bottom: 1px solid #f7f7f7; }
+  .card__cta {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center; }
+  .card__price-box {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 8rem; }
+  .card__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase; }
+  .card__price-value {
+    font-size: 6rem;
+    font-weight: 100; }
 
 .composition {
   position: relative; }
@@ -211,7 +313,8 @@ body {
   background-color: rgba(255, 255, 255, 0.8);
   font-size: 1.5rem;
   box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.6);
-  transition: transform .4s; }
+  transition: transform .4s;
+  backface-visibility: hidden; }
   .feature-box__icon {
     display: inline-block;
     background-image: linear-gradient(to right, #7ed56f, #28d485);
@@ -235,6 +338,11 @@ body {
   transform: skewY(5deg); }
   .features > * {
     transform: skewY(-5deg); }
+
+.tours {
+  padding: 15rem 0 5rem;
+  margin-top: -10vh;
+  background-color: #f7f7f7; }
 
 .header {
   position: relative;

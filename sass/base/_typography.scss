@@ -11,6 +11,7 @@ body {
   margin-bottom: 6rem;
   color: $color-white;
   text-transform: uppercase;
+  backface-visibility: hidden;
 
   &--main {
     display: inline-block;
