@@ -25,3 +25,19 @@
   margin-top: -10vh;
   background-color: $color-grey-light-1;
 }
+
+.stories {
+  position: relative;
+  padding: 10rem;
+  padding-bottom: 5rem;
+  background-image: linear-gradient(rgba($color-white, .7), rgba($color-white, .7));
+  overflow: hidden;
+
+  .btn-text {
+    background-color: transparent;
+
+    &:hover {
+      background-color: $color-primary;
+    }
+  }
+}

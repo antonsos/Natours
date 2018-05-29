@@ -189,6 +189,14 @@ body {
   font-size: 1.6rem;
   text-decoration: none; }
 
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1; }
+
 .card {
   position: relative;
   height: 50rem; }
@@ -324,6 +332,50 @@ body {
   .feature-box:hover {
     transform: translateY(-1.8rem); }
 
+.story {
+  width: 75%;
+  padding: 6rem;
+  padding-left: 9rem;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+  border-radius: 3px;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
+  box-shadow: 0 2.5rem 5rem rgba(0, 0, 0, 0.3);
+  transform: skewX(12deg); }
+  .story__shape {
+    float: left;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    transform: translate(-3rem) skewX(-12deg);
+    overflow: hidden; }
+  .story__user {
+    width: 150%;
+    transform: translate(-3.5rem) scale(1.4);
+    transition: .3s; }
+  .story__text {
+    transform: skewX(-12deg); }
+  .story__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: -100px;
+    color: #fff;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    text-align: center;
+    transition: .3s; }
+  .story:hover .story__caption {
+    margin-top: 0; }
+  .story:hover .story__user {
+    transform: translate(-3.5rem) scale(1.05);
+    filter: blur(3px) brightness(80%); }
+
 .about {
   padding: 20rem 0;
   margin-top: -20vh;
@@ -343,6 +395,17 @@ body {
   padding: 15rem 0 5rem;
   margin-top: -10vh;
   background-color: #f7f7f7; }
+
+.stories {
+  position: relative;
+  padding: 10rem;
+  padding-bottom: 5rem;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
+  overflow: hidden; }
+  .stories .btn-text {
+    background-color: transparent; }
+    .stories .btn-text:hover {
+      background-color: #55c57a; }
 
 .header {
   position: relative;
