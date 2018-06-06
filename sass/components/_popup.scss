@@ -1,0 +1,124 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba($color-black, .8);
+  opacity: 0;
+  visibility: hidden;
+
+  transition: .4s;
+
+  z-index: 9999;
+
+  &__content {
+    display: table;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.5);
+    width: 75%;
+    background-color: $color-white;
+    box-shadow: 0 0 4rem rgba($color-white, .3);
+    border-radius: 3px;
+    overflow: hidden;
+
+    transition: .4s;
+  }
+
+  &__picture {
+    display: table-cell;
+    width: 33.3333333%;
+    margin-right: 3%;
+  }
+
+  &__image {
+    height: 100%;
+  }
+
+  &__description {
+    display: table-cell;
+    width: 66.6666667%;
+    padding: 3rem 5rem;
+    vertical-align: middle;
+    backface-visibility: hidden;
+  }
+
+  &__text {
+    margin-bottom: 4rem;
+    font-size: 1.4rem;
+
+    column-count: 2;
+    column-gap: 3rem;
+    column-rule: 1px solid $color-grey-light-2;
+
+    hyphens: auto;
+  }
+
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:target &__content {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      position: absolute;
+      top: 2.5rem;
+      right: 2.5rem;
+      display: inline-block;
+      color: $color-grey-dark;
+      font-size: 4rem;
+      line-height: 1;
+      text-decoration: none;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  @include respond(tab-port) {
+
+    &__content {
+      display: block;
+      width: 75%;
+      height: 100vh;
+      overflow: auto;
+    }
+
+    &__picture {
+      display: block;
+      width: 100%;
+      margin-right: 0;
+    }
+
+    &__description {
+      display: block;
+      width: 100%;
+      padding: 2rem;
+      vertical-align: middle;
+      backface-visibility: hidden;
+    }
+
+    &__text {
+
+      column-count: 1;
+      column-gap: none;
+      column-rule: none;
+
+      hyphens: auto;
+    }
+  }
+
+  @include respond(phone) {
+    &__content {
+      width: 95%;
+    }
+  }
+}
