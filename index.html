@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <!-- fonts icon linea io -->
-  <link rel="stylesheet" href="css/icon-font.css">
+  <!-- <link rel="stylesheet" href="css/icon-font.css"> -->
   <!-- google fonts -->
   <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
   <!-- favicon -->
@@ -71,13 +71,13 @@
         <div class="col-1-of-2">
           <div class="composition">
             <div class="composition__photo  composition__photo--p1">
-              <img src="img/nat-1-large.jpg" alt="nat">
+              <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w" sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px" src="img/nat-1-large.jpg" alt="nat">
             </div>
             <div class="composition__photo composition__photo--p2">
-              <img src="img/nat-2-large.jpg" alt="nat">
+              <img srcset="img/nat-2.jpg 1x, img/nat-2-large.jpg 2x" sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px" src="img/nat-2-large.jpg" alt="nat">
             </div>
             <div class="composition__photo composition__photo--p3">
-              <img src="img/nat-3-large.jpg" alt="nat">
+              <img srcset="img/nat-3.jpg 1x, img/nat-3-large.jpg 2x" sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px" src="img/nat-3-large.jpg" alt="nat">
             </div>
           </div>
         </div>
@@ -123,7 +123,7 @@
         </div>
       </div>
     </section>
-    <section class="tours">
+    <section class="tours" id="tours">
       <div class="u-center-text u-margin-bottom-big">
         <h2 class="heading-secondary">Most popular tours</h2>
       </div>
@@ -154,7 +154,7 @@
                   <p class="card__price-only">Only</p>
                   <p class="card__price-value">$297</p>
                 </div>
-                <a href="#" class="btn btn--white">Book now!</a>
+                <a href="#popup" class="btn btn--white">Book now!</a>
               </div>
             </div>
           </div>
@@ -185,7 +185,7 @@
                   <p class="card__price-only">Only</p>
                   <p class="card__price-value">$497</p>
                 </div>
-                <a href="#" class="btn btn--white">Book now!</a>
+                <a href="#popup" class="btn btn--white">Book now!</a>
               </div>
             </div>
           </div>
@@ -216,7 +216,7 @@
                   <p class="card__price-only">Only</p>
                   <p class="card__price-value">$897</p>
                 </div>
-                <a href="#" class="btn btn--white">Book now!</a>
+                <a href="#popup" class="btn btn--white">Book now!</a>
               </div>
             </div>
           </div>
@@ -309,40 +309,65 @@
         </div>
       </div>
     </section>
-    <footer class="footer">
-      <div class="footer__logo-box">
-          <img src="img/logo-green-2x.png" alt="Full logo">
+  </main>
+  <footer class="footer">
+    <div>
+      <picture class="footer__logo-box">
+        <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x" media="(max-width: 37.5em)">
+        <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" src="img/logo-green-2x.png" alt="Full logo">
+      </picture>
+    </div>
+    <div class="row">
+      <div class="col-1-of-2">
+        <div class="footer__navi">
+          <ul class="footer__list">
+            <li class="footer__item">
+              <a href="#" class="footer__link">Company</a>
+            </li>
+            <li class="footer__item">
+              <a href="#" class="footer__link">Contact us</a>
+            </li>
+            <li class="footer__item">
+              <a href="#" class="footer__link">Carrers</a>
+            </li>
+            <li class="footer__item">
+              <a href="#" class="footer__link">Privacy policy</a>
+            </li>
+            <li class="footer__item">
+              <a href="#" class="footer__link">Terms</a>
+            </li>
+          </ul>
+        </div>
       </div>
+      <div class="col-1-of-2">
+          <p class="footer__copyright">
+              Built by <a href="#" class="footer__link">Anton Nikulin</a> on the online course <a href="#" class="footer__link">Advanced CSS and Sass</a>.
+              Copyright&copy; by Jonas Schmedtmann. You are 100% allowed to use this webpage for both personal and commercial use, but NOT to claim it as your own design. A credit to the original author, Jonas Schmedtmann, is of course highly appreciated!
+          </p>
+      </div>
+    </div>
+  </footer>
+  <div class="popup" id="popup">
+    <div class="popup__content">
       <div class="row">
-        <div class="col-1-of-2">
-          <div class="footer__navi">
-            <ul class="footer__list">
-              <li class="footer__item">
-                <a href="#" class="footer__link">Company</a>
-              </li>
-              <li class="footer__item">
-                <a href="#" class="footer__link">Contact us</a>
-              </li>
-              <li class="footer__item">
-                <a href="#" class="footer__link">Carrers</a>
-              </li>
-              <li class="footer__item">
-                <a href="#" class="footer__link">Privacy policy</a>
-              </li>
-              <li class="footer__item">
-                <a href="#" class="footer__link">Terms</a>
-              </li>
-            </ul>
+        <div class="popup__picture">
+          <div class="popup__image-box">
+            <img src="img/nat-8.jpg" alt="best week" class="popup__image">
+            <img src="img/nat-9.jpg" alt="best week" class="popup__image">
           </div>
         </div>
-        <div class="col-1-of-2">
-            <p class="footer__copyright">
-                Built by <a href="#" class="footer__link">Anton Nikulin</a> on the online course <a href="#" class="footer__link">Advanced CSS and Sass</a>.
-                Copyright&copy; by Jonas Schmedtmann. You are 100% allowed to use this webpage for both personal and commercial use, but NOT to claim it as your own design. A credit to the original author, Jonas Schmedtmann, is of course highly appreciated!
-            </p>
+        <div class="popup__description">
+          <a href="#tours" class="popup__close">&times;</a>
+          <h2 class="heading-secondary u-margin-bottom-small">Start booking now</h2>
+          <h3 class="heading-tertiary u-margin-bottom-small">Important &ndash; Please read these terms before booking</h3>
+          <p class="popup__text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed sed risus pretium quam. Aliquam sem et tortor consequat id. Volutpat odio facilisis mauris sit amet massa vitae. Mi bibendum
+            neque egestas congue. Placerat orci nulla pellentesque dignissim enim sit. Vitae semper quis lectus nulla at volutpat diam ut venenatis. Malesuada pellentesque elit eget gravida cum sociis natoque penatibus et. Proin fermentum leo vel orci porta non pulvinar
+          </p>
+          <a href="#" class="btn btn--green">Book now</a>
         </div>
       </div>
-    </footer>
-  </main>
+    </div>
+  </div>
 </body>
 </html>

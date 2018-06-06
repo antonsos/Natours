@@ -152,4 +152,50 @@
       font-size: 6rem;
       font-weight: 100;
   }
+
+  @media screen and (max-width: 56.25em),
+        screen and (hover: none) {
+    height: auto;
+    margin-top: 7rem;
+    box-shadow: 0 1.5rem 3.5rem rgba($color-black, .3);
+
+    &__side {
+      position: relative;
+      height: auto;
+      border-radius: 3px 3px 0 0;
+      box-shadow: none;
+
+      &--front {
+        padding-bottom: 6rem;
+      }
+
+      &--back {
+        width: 100.15%;
+        margin-top: -6rem;
+        border-radius: 0 0 3px 3px;
+        transform: rotateY(0);
+        clip-path: polygon( 0 0, 100% 18%, 100% 100%, 0 100%);
+        -webkit-clip-path: polygon( 0 0, 100% 18%, 100% 100%, 0 100%);
+        overflow: hidden;
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+
+    //cta
+    &__cta {
+      position: relative;
+      top: 0;
+      left: 0;
+      padding: 6rem 0 3rem 0;
+      transform: translate(0, 0);
+      width: 100%;
+    }
+
+    &__price-box {
+      margin-bottom: 2rem;
+    }
+  }
 }

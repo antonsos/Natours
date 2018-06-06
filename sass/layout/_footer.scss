@@ -57,4 +57,16 @@
     padding-top: 2rem;
     border-top: 2px solid $color-grey-light-1;
   }
+
+  @include respond(tab-port) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-align: center;
+
+    &__logo-box {
+      height: auto;
+      margin: 0 auto;
+      margin-bottom: 5rem;
+    }
+  }
 }

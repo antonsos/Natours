@@ -6,7 +6,7 @@
 
   &__button {
     position: fixed;
-    top: 1rem;
+    top: 3.5rem;
     right: 4rem;
     width: 6rem;
     height: 6rem;
@@ -16,18 +16,34 @@
     text-align: center;
     z-index: 200;
     cursor: pointer;
+
+    @include respond(tab-land) {
+      top: 2rem;
+    }
+
+    @include respond(phone) {
+      right: 1.5rem;
+    }
   }
 
   &__background {
     position: fixed;
-    top: 1.5rem;
+    top: 4rem;
     right: 4.5rem;
     width: 5rem;
     height: 5rem;
     border-radius: 50%;
-    background-image: radial-gradient($color-tertiary-light, rgba($color-tertiary-dark, .9) 50%);
+    background-image: radial-gradient($color-tertiary-light, rgba($color-tertiary-dark, .3) 50%);
     z-index: 100;
     transition: transform .3s;
+
+    @include respond(tab-land) {
+      top: 2.5rem;
+    }
+
+    @include respond(phone) {
+      right: 2rem;
+    }
   }
 
   &__nav {
